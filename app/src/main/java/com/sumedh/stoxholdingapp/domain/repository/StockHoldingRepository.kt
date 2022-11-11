@@ -1,11 +1,12 @@
 package com.sumedh.stoxholdingapp.domain.repository
 
-import com.sumedh.stoxholdingapp.data.dto.Response
-import com.sumedh.stoxholdingapp.data.dto.StockDto
+import com.sumedh.stoxholdingapp.common.Resource
+import com.sumedh.stoxholdingapp.domain.model.Stock
+import kotlinx.coroutines.flow.Flow
 
 interface StockHoldingRepository {
 
-    suspend fun getStocks() : Response
+    suspend fun getStocks() : Flow<Resource<List<Stock>>>
 
-    suspend fun getHoldingSummary() : List<StockDto>
+    suspend fun getHoldingSummary() : List<Stock>
 }
